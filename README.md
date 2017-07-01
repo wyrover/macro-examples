@@ -1,1 +1,3 @@
-# time-examples
+# macro-examples
+
+doctest

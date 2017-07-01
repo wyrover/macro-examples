@@ -1,5 +1,5 @@
-BOOK_CODE_PATH = "H:/rover/rover-self-work/cpp/book-code"
-THIRD_PARTY = "H:/rover/rover-self-work/cpp/book-code/3rdparty"
+BOOK_CODE_PATH = "E:/book-code"
+THIRD_PARTY = "E:/book-code/3rdparty"
 WORK_PATH = os.getcwd()
 includeexternal (BOOK_CODE_PATH .. "/premake-vs-include.lua")
 
@@ -56,3 +56,28 @@ workspace(path.getname(os.realpath(".")))
             {
                 "gtest",
             }
+
+        create_console_project("test-doctest", "src")
+            includedirs
+            {
+                "%{THIRD_PARTY}/doctest",                
+                "%{THIRD_PARTY}",
+            }
+            links
+            {
+                --"gtest",
+            }
+
+        create_console_project("test-doctest-all-features", "src")
+            includedirs
+            {
+                "%{THIRD_PARTY}/doctest",                
+                "%{THIRD_PARTY}",
+            }
+            links
+            {
+                --"gtest",
+            }
+
+
+            
